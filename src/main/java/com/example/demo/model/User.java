@@ -36,12 +36,16 @@ public class User {
         this.name = name;
     }
 
-    public List<Boat> getMyReservedBoats() {
-        return myReservedBoats;
-    }
+//    public List<Boat> getMyReservedBoats() {
+//        return myReservedBoats;
+//    }
+//
+//    public void setMyReservedBoats(List<Boat> myReservedBoats) {
+//        this.myReservedBoats = myReservedBoats;
+//    }
 
-    public void setMyReservedBoats(List<Boat> myReservedBoats) {
-        this.myReservedBoats = myReservedBoats;
+    public List<Boat> getReservedBoats(){
+        return myReservedBoats;
     }
 
 }

@@ -26,8 +26,8 @@ public class Boat {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Type type;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "userId", referencedColumnName = "userId", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userId", referencedColumnName = "userId")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
@@ -55,11 +55,11 @@ public class Boat {
         this.type = type;
     }
 
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
