@@ -26,10 +26,10 @@ public class Boat {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Type type;
 
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "userId", referencedColumnName = "userId", nullable = false)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    private User user;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "userId", referencedColumnName = "userId", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private User user;
 
     public Integer getBoatId() {
         return boatId;
