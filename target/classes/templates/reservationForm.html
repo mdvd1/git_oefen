@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a new Reservation</title>
+</head>
+<body>
+<h1>Make a new Reservation</h1>
+<form th:action="@{/reservations/add}" th:object="${reservation}" method="post">
+    <p>Boat:
+        <select th:field="*{boat}">
+            <option th:each="boat: ${allBoats}" th:value="*{boat.boatId}" th:text="${boat.boatname}"></option>
+        </select>
+    </p>
+    <p>
+        Type:
+        <select th:field="*{type}">
+            <option th:each="type: ${allTypes}" th:value="${type.typeId}" th:text="${type.typeName}"></option>
+        </select>
+    </p>
+    <p><input type="submit" value="Submit" /></p>
+
+</form>
+</body>
+</html>

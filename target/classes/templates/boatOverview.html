@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boat inventory</title>
+</head>
+<body>
+<h1>Boats</h1>
+<table>
+    <tr>
+        <th>Boat name</th>
+        <th>Type</th>
+    </tr>
+    <tr th:each="boat: ${allBoats}">
+        <td><a th:href="@{/boat/{boatBoatname}(boatBoatname=${boat.boatname})}" th:text="${boat.boatname}" /></td>
+        <td th:text="${boat.type.typeName}" />
+
+    </tr>
+</table>
+<p>
+<a th:href="@{/boats/add}">Add Boat</a>
+</p>
+<p>
+    <a th:href="@{/types}">Boat type overview</a>
+</p>
+<p>
+    <a th:href="@{/users}">Add User</a>
+</p>
+
+</body>
+</html>

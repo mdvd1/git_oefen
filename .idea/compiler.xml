@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/ReservationController.java" />
+      <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/model/Reservation.java" />
+      <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/repository/ReservationRepository.java" />
+      <file url="file://$PROJECT_DIR$/src/main/resources/templates/reservationForm.html" />
+      <file url="file://$PROJECT_DIR$/src/main/resources/templates/userOverview.html" />
+      <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/controller/UserController.java" />
+      <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/model/User.java" />
+      <file url="file://$PROJECT_DIR$/src/main/java/com/example/demo/repository/UserRepository.java" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />

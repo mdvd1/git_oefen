@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User overview</title>
+</head>
+<body>
+<h1>Overview of existing Users</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th># Reservations</th>
+    </tr>
+    <tr th:each="user: ${allUsers}">
+        <td th:text="${user.userId}" />
+        <td th:text="${user.name}" />
+        <td th:text="${user.myReservedBoats}" />
+    </tr>
+</table>
+
+<h1>Create a new User</h1>
+<form th:action="@{/user/add}" th:object="${user}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
+</body>
+</html>
