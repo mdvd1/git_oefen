@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new boat</title>
+</head>
+<body>
+    <h1>Add a new boat</h1>
+    <form th:action="@{/boats/add}" th:object="${boat}" method="post">
+        <p>Boat name: <input type="text" th:field="*{boatname}"/></p>
+        <p>
+            Type:
+            <select th:field="*{type}">
+                <option th:each="type: ${allTypes}" th:value="${type.typeId}" th:text="${type.typeName}"></option>
+            </select>
+        </p>
+        <p><input type="submit" value="Submit" /></p>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boat type overview</title>
+</head>
+<body>
+<h1>Overview of existing boat types</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Boat type</th>
+        <th># of boats</th>
+    </tr>
+    <tr th:each="type: ${allTypes}">
+        <td th:text="${type.typeId}" />
+        <td th:text="${type.typeName}" />
+        <td th:text="${type.numberofBoats}" />
+    </tr>
+</table>
+
+<h1>Create a new boat type</h1>
+<form th:action="@{/type/add}" th:object="${type}" method="post">
+    <p>Boat type: <input th:type="text" th:field="*{typeName}"/></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
+</body>
+</html>
