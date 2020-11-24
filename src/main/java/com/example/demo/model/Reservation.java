@@ -24,6 +24,11 @@ public class Reservation {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Boat boat;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "userId", referencedColumnName = "userId", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private User user;
+
     public Integer getReservationId() {
         return reservationId;
     }
@@ -40,19 +45,19 @@ public class Reservation {
         this.weekDay = weekDay;
     }
 
-    public Boolean getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(Boolean available) {
-        this.available = available;
-    }
-
-    public Boat getBoat() {
+   public Boat getBoat() {
         return boat;
     }
 
     public void setBoat(Boat boat) {
         this.boat = boat;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -14,10 +14,14 @@
         </select>
     </p>
     <p>
-        Type:
-        <select th:field="*{type}">
-            <option th:each="type: ${allTypes}" th:value="${type.typeId}" th:text="${type.typeName}"></option>
+        User:
+        <select th:field="*{user}">
+            <option th:each="user: ${allUsers}" th:value="${user.userId}" th:text="${user.name}"></option>
         </select>
+    </p>
+    <p>
+        Day:
+        <select th:radiogroup="*{}"
     </p>
     <p><input type="submit" value="Submit" /></p>
 

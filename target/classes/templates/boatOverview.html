@@ -11,6 +11,8 @@
     <tr>
         <th>Boat name</th>
         <th>Type</th>
+        <th>Reserved by</th>
+        <th>On day</th>
     </tr>
     <tr th:each="boat: ${allBoats}">
         <td><a th:href="@{/boat/{boatBoatname}(boatBoatname=${boat.boatname})}" th:text="${boat.boatname}" /></td>
